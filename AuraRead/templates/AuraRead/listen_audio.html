@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listen to Your PDF - AuraRead</title>
+
+    <style>
+        body{
+            font-family: sans-serif; text-align: center; padding: 50px;
+        }
+        .audio-container{
+            background: #f4f4f4; padding: 30px; 
+            border-radius: 10px; display: inline-block;
+        }
+        .btn-download{
+            display: block; margin-top: 20px; color: blue; text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Audio is Ready!</h1>
+
+    <div class="audio-container">
+        {% if audio_url %}
+            <audio controls>
+                <source src="{{audio_url}}" type="audio/mpeg">
+                Your browser does not support audio element.
+            </audio>
+
+            <a href="{{audio_url}}" download class="btn-download">Download MP3</a>
+
+        {% else %}
+            <p>ERROR: Audio file not found.</p>
+
+        {% endif %}
+    </div>
+
+    <p>
+        <a href="{% url 'AuraRead:upload_file' %}">Upload another PDF</a>
+    </p>
+</body>
+</html>

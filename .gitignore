@@ -1,0 +1,37 @@
+# Environment
+Domain_Expansion
+venv/
+env/
+.venv/
+
+# Docker
+.dockerignore
+
+# Env file
+.env
+
+# Django stuff
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Distribution / packaging
+.python
+build/
+lib/
+dist/
+
+# Byte compiled
+*.pyc
+__pycache__/
+
+# Media and Static
+Static_collected/
+image/
+files/
+
+# IDE and OS specifiic files
+.idea/
+.vscode/
+.DS_Store/

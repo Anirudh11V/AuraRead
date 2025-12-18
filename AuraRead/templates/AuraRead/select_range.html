@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Reading Range</title>
+</head>
+<body>
+
+    <section>
+        <h2>Select Reading Range for PDF ID: {{pdf_id}}</h2>
+        <div class="range-selection">
+
+            <form action="{% url 'AuraRead:select_range' pdf_id=pdf_id %}" method="post"> {% csrf_token %}
+
+                {{form.as_p}}
+                <button type="submit">Generate Audio</button>
+            </form>
+
+        </div>
+
+        <p style="margin-top: 20px;">
+            <small>Note: Pages are counted staring from 1.</small>
+        </p>
+    </section>
+    
+</body>
+</html>

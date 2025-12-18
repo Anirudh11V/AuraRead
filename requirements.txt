@@ -1,0 +1,4 @@
+django
+pypdf
+gTTS
+python-dotenv
